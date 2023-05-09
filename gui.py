@@ -30,7 +30,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer1.Add( self.Text1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
 
-		self.m_staticText3 = wx.StaticText( self, wx.ID_ANY, u"Hotkey auswählen", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText3 = wx.StaticText( self, wx.ID_ANY, u"Pick hotkey", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText3.Wrap( -1 )
 
 		bSizer1.Add( self.m_staticText3, 0, wx.ALL, 5 )
@@ -41,7 +41,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer1.Add( self.m_textCtrl2, 0, wx.ALL, 5 )
 
-		self.m_staticText4 = wx.StaticText( self, wx.ID_ANY, u"Waffe", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText4 = wx.StaticText( self, wx.ID_ANY, u"Weapon", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText4.Wrap( -1 )
 
 		bSizer1.Add( self.m_staticText4, 0, wx.ALL, 5 )
@@ -51,7 +51,7 @@ class MyFrame1 ( wx.Frame ):
 		self.m_choice1.SetSelection( 0 )
 		bSizer1.Add( self.m_choice1, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
 
-		self.m_staticText51 = wx.StaticText( self, wx.ID_ANY, u"Pistole", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText51 = wx.StaticText( self, wx.ID_ANY, u"Pistol", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText51.Wrap( -1 )
 
 		bSizer1.Add( self.m_staticText51, 0, wx.ALL, 5 )
@@ -61,7 +61,7 @@ class MyFrame1 ( wx.Frame ):
 		self.m_choice2.SetSelection( 0 )
 		bSizer1.Add( self.m_choice2, 0, wx.ALL|wx.EXPAND, 5 )
 
-		self.m_button5 = wx.Button( self, wx.ID_ANY, u"HotKey hinzufügen", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_button5 = wx.Button( self, wx.ID_ANY, u"Add hotkey", wx.DefaultPosition, wx.DefaultSize, 0 )
 		bSizer1.Add( self.m_button5, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		sbSizer1 = wx.StaticBoxSizer( wx.StaticBox( self, wx.ID_ANY, wx.EmptyString ), wx.HORIZONTAL )
@@ -81,7 +81,7 @@ class MyFrame1 ( wx.Frame ):
 
 		bSizer1.Add( sbSizer1, 1, wx.EXPAND|wx.TOP, 5 )
 
-		self.m_staticText5 = wx.StaticText( self, wx.ID_ANY, u"Doppelklick zum Hotkey entfernen", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText5 = wx.StaticText( self, wx.ID_ANY, u"Doubleclick to delete hotkey", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText5.Wrap( -1 )
 
 		bSizer1.Add( self.m_staticText5, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
