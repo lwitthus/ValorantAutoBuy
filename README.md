@@ -9,11 +9,6 @@ To make script creation and management easier, the program has a user-friendly i
 Overall, this program aims to make the weapon purchasing process in Valorant faster and more efficient, allowing users to quickly and easily purchase the items they need without having to navigate through menus and make individual purchases.
 
 
-<p align="center">
- 
-  <img width="460" height="300" src="https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/73fb82f5-cc8b-4a2e-ba82-4e9eebe07fa">
- 
-</p>
 
 ![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/73fb82f5-cc8b-4a2e-ba82-4e9eebe07fac)
 ![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/73e2d6e3-2338-4b78-9592-10e2e5bafe81)
