@@ -1,0 +1,57 @@
+# Define the coordinates of the Shield buttons on the Buy menu
+    SHIELD_X, SHIELD_Y = 1916, 772
+
+    # Define the coordinates of the left, middle, and right weapon slots on the Buy menu
+    LEFT_X, LEFT_Y = 783, 1180
+    MID_X, MID_Y = 1272, 1180
+    RIGHT_X, RIGHT_Y = 1763, 1180
+
+    # Define the coordinates to check if Weapon or Shield needs to be bought
+    WEAPON_NEED_X_1, WEAPON_NEED_Y_1 = 368, 256
+    WEAPON_NEED_X_2, WEAPON_NEED_Y_2 = 344, 263
+    SHIELD_N_X, SHIELD_N_Y = 1864, 929
+
+    # Define the coordinates to check if the Buy menu is open
+    BUYMENU_X, BUYMENU_Y = 2483, 74
+
+
+(
+#need pistol
+Frenzy 249 255
+Sherrif & Shorty 287 255
+ghost 294 254
+
+Sherrif 272 255
+)
+
+
+Shorty 625 457
+Frenzy 625 616
+Ghost 625 775
+Sheriff 625 934
+
+
+
+WINDOW_WIDTH, WINDOW_HEIGHT = pyautogui.size()
+
+SHIELD_X = WINDOW_WIDTH / 1.336116910229645
+SHIELD_Y = WINDOW_HEIGHT / 1.86528497409
+
+LEFT_X = WINDOW_WIDTH / 3.269476372924649
+LEFT_Y = WINDOW_HEIGHT / 1.22033898305
+
+MID_X = WINDOW_WIDTH / 2.012578616352201
+MID_Y = WINDOW_HEIGHT / 1.22033898305
+RIGHT_X = WINDOW_WIDTH / 1.452070334656835
+RIGHT_Y = WINDOW_HEIGHT / 1.22033898305
+
+WEAPON_NEED_X_1 = WINDOW_WIDTH / 6.95652173913
+WEAPON_NEED_Y_1 = (WINDOW_HEIGHT / 5.625) -1
+
+
+
+SHIELD_N_X = WINDOW_WIDTH / 1.37339055794
+SHIELD_N_Y = WINDOW_HEIGHT / 1.55005382131
+
+BUYMENU_X = WINDOW_WIDTH / 1.03101087394
+BUYMENU_Y = WINDOW_HEIGHT / 19.4594594595
