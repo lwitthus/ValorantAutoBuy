@@ -1,6 +1,14 @@
 ﻿# ValorantAutoBuy
+ 
+This automated weapon purchasing program is designed to help users purchase weapons in Valorant using pre-defined scripts. Users can create and manage multiple scripts with ease.
 
-pyinstaller --name ValorantBuyScript --onefile --windowed .\buyScriptGui.py
+Each script includes a list of weapons to purchase and their corresponding attachments. The program automatically purchases these items in the order specified by the script, as long as the user has enough money to do so. Additionally, a Heavy Shield is always purchased with each script, provided that there is enough money.
+
+To make script creation and management easier, the program has a user-friendly interface that allows users to create and edit scripts effortlessly. Users can switch between scripts without difficulty.
+
+Overall, this program aims to make the weapon purchasing process in Valorant faster and more efficient, allowing users to quickly and easily purchase the items they need without having to navigate through menus and make individual purchases.
+
+
 
 ![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/73fb82f5-cc8b-4a2e-ba82-4e9eebe07fac)
 
@@ -15,3 +23,5 @@ pyinstaller --name ValorantBuyScript --onefile --windowed .\buyScriptGui.py
 
 
 
+
+pyinstaller --name ValorantBuyScript --onefile --windowed .\buyScriptGui.py
