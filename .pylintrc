@@ -1,0 +1,12 @@
+[MASTER]
+disable=
+    C0114, # missing-module-docstring
+    C0115, #missing-class-docstring
+    C0116, #missing-function-docstring
+    W0702, #bare-except
+    C0116, #missing-function-docstring
+    R0913, #too-many-arguments
+    W0718, #broad-exception-caught
+    W0718, #broad-exception-caugh
+    C0301, #line-too-long
+    R1710, #inconsistent-return-statements
