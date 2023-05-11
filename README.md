@@ -20,6 +20,10 @@ Overall, this program aims to make the weapon purchasing process in Valorant fas
 
 ![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/bb0fbad7-5514-460e-adc7-89eee71474f2)
 
+![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/539cb2d2-8cb3-460e-8288-968401ced22b)
+
+![image](https://github.com/lwitthus/ValorantAutoBuy/assets/79256065/b47c719a-9a0c-4f7f-b3e1-f9cbb307190d)
+
 
 
 
