@@ -28,7 +28,8 @@ class AutoBuy():
     # DEFINE the RGB of WHITE
     RGB_WHITE = (255, 255, 255)
     # pylint: disable=R1710:inconsistent-return-statements
-    def auto_buy(self, weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy):
+
+    def auto_buy(self, weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy, utility_bool):
         # This function is called when the hotkey is pressed
         try:
             try:
@@ -36,9 +37,10 @@ class AutoBuy():
                 # pylint: disable=I1101:c-extension-no-member
                 if win32gui.GetWindowText(win32gui.GetForegroundWindow()) == 'VALORANT  ':
                     self.open_buy_menu()
-                    sleep(0.8)
-                    self.buy_full(weapon_name_to_buy,
-                                  pistol_name_to_buy, shield_name_to_buy)
+                    sleep(0.5)
+                    if self.is_buy_menu_open():
+                        self.buy_full(weapon_name_to_buy,
+                                      pistol_name_to_buy, shield_name_to_buy, utility_bool)
                     print("bought")
                 else:
                     print("The hotkey was not used in the Valorant window.")
@@ -50,6 +52,11 @@ class AutoBuy():
         except:
             pass
 
+    def is_buy_menu_open(self):
+        # Get the Color of X to check if the buy menu is open
+        color_of_x = self.get_pixel_color(BUYMENU_X, BUYMENU_Y)
+        return color_of_x in (self.RGB_WHITE, self.RGB_GREEN)
+
     def open_buy_menu(self):
         # Get the Color of X to check if the buy menu is already open
         color_of_x = self.get_pixel_color(BUYMENU_X, BUYMENU_Y)
@@ -57,12 +64,12 @@ class AutoBuy():
             # If the Buy menu is not open, press and release the BUY_BUTTON to open the buy menu
             keyboard.press_and_release(self.BUY_BUTTON)
 
-    def buy_full(self, weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy):
-        ############################################################################################### Note; Wenn Bugs falsch gekauft, remove sleep buymenu/buy to buy weapon sleep buy pistol sleep buy shield sleep
+    def buy_full(self, weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy, utility_bool):
         self.buy_weapon(weapon_name_to_buy)
         self.buy_pistol(pistol_name_to_buy)
         self.buy_shield(shield_name_to_buy)
-        self.buy_util()
+        if utility_bool:
+            self.buy_util()
         # Press the Esc key to close the Buy menu
         keyboard.press_and_release("esc")
 
@@ -163,6 +170,6 @@ class AutoBuy():
         (r_5, g_5, b_5) = self.get_pixel_color(
             WEAPON_NEED_X_5, WEAPON_NEED_Y_5)
 
-        return  (r_1 < 120 and g_1 < 120 and b_1 < 120 and r_2 < 120 and g_2 < 120 and b2_ < 120
-            and r_3 < 120 and g_3 < 120 and b_3 < 120 and r_4 < 120 and g_4 < 120 and b_4 < 120
+        return (r_1 < 120 and g_1 < 120 and b_1 < 120 and r_2 < 120 and g_2 < 120 and b2_ < 120
+                and r_3 < 120 and g_3 < 120 and b_3 < 120 and r_4 < 120 and g_4 < 120 and b_4 < 120
                 and r_5 < 120 and g_5 < 120 and b_5 < 120)

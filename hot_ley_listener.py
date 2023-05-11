@@ -25,8 +25,10 @@ class HotKeyListener:
                     key.char)
                 shield_name_to_buy = hotkey_manager.get_hotkey_shield_name(
                     key.char)
+                utility_bool = hotkey_manager.get_hotkey_utility_bool(
+                    key.char)
                 func = hotkey_manager.get_hotkey_func(key.char)
-                func(weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy)
+                func(weapon_name_to_buy, pistol_name_to_buy, shield_name_to_buy, utility_bool)
             return
         except:
             pass

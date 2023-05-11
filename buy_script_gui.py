@@ -16,7 +16,9 @@ class MyCustomFrame(MyFrame1):
         self.weapon_name = ""
         self.pistol_name = ""
         self.shield_name = "NoShield"
+        self.utility_name = "NoUtility"
         self.hotkey = None
+        self.utility_bool = False
 
     # Überschreiben der Event-Methoden mit Ihren eigenen Methoden
     def m_textCtrl2OnChar(self, event):
@@ -27,16 +29,23 @@ class MyCustomFrame(MyFrame1):
 
     def m_button5OnButtonClick(self, event):
         hotkey_manager.add_hotkey(
-            self.hotkey, auto_buy.auto_buy, self.weapon_name, self.pistol_name, self.shield_name)
+            self.hotkey, auto_buy.auto_buy, self.weapon_name, self.pistol_name, self.shield_name, self.utility_bool)
+        self.reset_gui()
+        self.refresh_m_list_box()
+
+        event.Skip()
+
+    def reset_gui(self):
         self.m_textCtrl2.SetValue("")
         self.m_choice1.SetSelection(0)
         self.m_choice2.SetSelection(0)
         self.m_radioBox1.SetSelection(0)
+        self.m_radioBox2.SetSelection(0)
         self.weapon_name = ""
         self.pistol_name = ""
         self.shield_name = "NoShield"
-        self.refresh_m_list_box()
-        event.Skip()
+        self.utility_name = "NoUtility"
+        self.utility_bool = False
 
     def m_choice1OnChoice(self, event):
         selected_option = self.m_choice1.GetString(
@@ -58,6 +67,16 @@ class MyCustomFrame(MyFrame1):
             self.shield_name = "LightShield"
         if selected_option == 2:
             self.shield_name = "HeavyShield"
+        event.Skip()
+
+    def m_radioBox2OnRadioBox(self, event):
+        selected_option = event.GetEventObject().GetSelection()
+        if selected_option == 0:
+            self.utility_name = "NoUtility"
+            self.utility_bool = False
+        if selected_option == 1:
+            self.utility_name = "FullUtility"
+            self.utility_bool = True
         event.Skip()
 
     def start_buttonOnButtonClick(self, event):
@@ -83,21 +102,29 @@ class MyCustomFrame(MyFrame1):
     def refresh_m_list_box(self):
         hotkeys = hotkey_manager.get_all_hotkeys()
         self.m_listBox1.Clear()
-        width = 25
+        width = 20
         # pylint: disable=C0206:consider-using-dict-items
         for key in hotkeys:
             hotkey = hotkeys[key]
-            hotkey_str = f"Hotkey: {key:<{width-7}}\t"
-            weapon_str = f"Weapon: {hotkey['weaponName']:<{width-7}}\t"
-            pistol_str = f"Pistol: {hotkey['pistolName']:<{width-7}}\t"
-            shield_str = f"Shield: {hotkey['shieldName']:<{width-7}}"
+            utility_bool = hotkey['utility_bool']
+            utility_str = ""
+            hotkey_str = f"Hotkey: {key:<{width-15}}\t"
+            weapon_str = f"Weapon: {hotkey['weaponName']:<{width}}\t" if len(
+                hotkey['weaponName']) > 0 else f"{'':<{width}}\t\t"
+            pistol_str = f"Pistol: {hotkey['pistolName']:<{width}}\t" if len(
+                hotkey['pistolName']) > 0 else f"{'':<{width}}\t\t"
+            shield_str = f"Shield: {hotkey['shieldName']:<{width}}\t"
+            if utility_bool:
+                utility_str = "Utility: FullUtility"
+            else:
+                utility_str = "Utility: NoUtility"
             hotkey_display_str = hotkey_str
-            if len(hotkey['weaponName']) > 0:
-                hotkey_display_str += weapon_str
-            if len(hotkey['pistolName']) > 0:
-                hotkey_display_str += pistol_str
+            hotkey_display_str += weapon_str
+            hotkey_display_str += pistol_str
             hotkey_display_str += shield_str
+            hotkey_display_str += utility_str
             self.m_listBox1.Append(hotkey_display_str)
+
 
 # pylint: disable=E1101:no-member
 wx.SizerFlags.DisableConsistencyChecks()
